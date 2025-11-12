@@ -1,0 +1,14 @@
+name: 'ecommerce_analytics_dbt'
+version: '1.0'
+config-version: 2
+
+profile: 'default'
+
+model-paths: ["models"]
+seed-paths: ["data"]
+test-paths: ["tests"]
+
+models:
+  ecommerce_analytics_dbt:
+  +schema: analytics_dbt  # where to build your models in snowflake
+  +materialized: view     # default model type
