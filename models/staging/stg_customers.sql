@@ -5,14 +5,14 @@ from
     {{ source('ecommerce_analytics_dbt', 'customers') }}
 )
 select
-    customerid as customer_id,
-    region,
+    split_part(to_varchar(customerid),'.',1) as customer_id,
+    trim(region) as region,
     country,
     age_group,
     gender,
     loyalty_tier,
-    signup_date,
-    last_purchase_date,
-    total_spent
+    cast(signup_date as date) as signup_date,
+    cast(last_purchase_date as date) as last_purchase_date,
+    cast(total_spent as float) as total_spent
 from
     customers_sources
