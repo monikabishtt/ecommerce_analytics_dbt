@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: ecommerce_analytics_dbt
+    description: "Raw e-commerce data loaded into Snowflake"
+    database: RAW
+    schema: ECOMMERCE_ANALYTICS_DBT
+
+    tables:
+      - name: orders
+        description: "Transactional order data (invoices, products, customers)"
+      - name: customers
+      - name: products
