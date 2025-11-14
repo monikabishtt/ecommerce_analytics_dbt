@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: customer_sales_summary
+    description: "Customer-level aggregated sales dashboard table"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: product_performance
+    description: "Product-level metrics and KPIs"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+  - name: monthly_revenue
+    description: "Monthly financial KPI summary for dashboards"
+    columns:
+      - name: month
+        tests:
+          - not_null
+          - unique
