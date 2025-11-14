@@ -16,3 +16,4 @@ select
     cast(total_spent as float) as total_spent
 from
     customers_sources
+where customer_id is not null
