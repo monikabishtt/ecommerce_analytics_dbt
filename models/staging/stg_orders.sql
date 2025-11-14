@@ -13,7 +13,7 @@ select
     try_to_timestamp(invoicedate, 'MM/DD/YYYY HH24:MI') as order_date,
     unitprice as unit_price,
     (unitprice * quantity) as total_value,
-    customerid as customer_id,
+    split_part(to_varchar(customerid), '.', 1) as customer_id,
     trim(country) as country
 from
     orders_source
