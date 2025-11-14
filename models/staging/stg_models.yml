@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "staging model for customer data"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+      - name: signup_date
+        tests:
+          - not_null
+  
+  - name: stg_products
+    description: "staging model for products data"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+      - name: selling_price
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_orders
+    description: "staging model for order data"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: order_date
+        tests:
+          - not_null
