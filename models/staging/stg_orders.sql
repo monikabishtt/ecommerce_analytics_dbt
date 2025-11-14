@@ -10,7 +10,14 @@ cleaned as (
         description as product_name,
         quantity,
 
-        try_to_timestamp(invoicedate) as order_date,
+        coalesce(
+        try_to_timestamp(invoicedate, 'M/D/YYYY H:MI'),
+        try_to_timestamp(invoicedate, 'M/D/YYYY HH24:MI'),
+        try_to_timestamp(invoicedate, 'MM/DD/YYYY H:MI'),
+        try_to_timestamp(invoicedate, 'MM/DD/YYYY HH24:MI'),
+        try_to_timestamp(invoicedate)
+        ) as order_date,
+
 
         unitprice as unit_price,
         (unitprice * quantity) as total_value,

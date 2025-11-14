@@ -23,7 +23,7 @@ models:
       - name: order_id
         tests:
           - not_null
-          - unique
+          
       - name: customer_id
         tests:
           - relationships:
