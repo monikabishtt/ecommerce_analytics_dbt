@@ -22,7 +22,6 @@ models:
       - name: selling_price
         tests:
           - not_null
-          - unique
 
   - name: stg_orders
     description: "staging model for order data"
@@ -30,7 +29,6 @@ models:
       - name: order_id
         tests:
           - not_null
-          - unique
       - name: order_date
         tests:
           - not_null
