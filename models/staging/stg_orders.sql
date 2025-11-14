@@ -1,6 +1,6 @@
 with orders_source as (
     select *
-    from raw.ecommerce_analytics_dbt.orders
+    from {{ source('ecommerce_analytics_dbt', 'orders') }}
 ),
 
 cleaned as (
